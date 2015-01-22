@@ -6,9 +6,16 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C82462D41A719E800059F668 /* OTRPrincipleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C82462D31A719E800059F668 /* OTRPrincipleClass.m */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C82462C41A719C4A0059F668 /* Textual OTR.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Textual OTR.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82462C81A719C4A0059F668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C82462CE1A719DCC0059F668 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = "../../../../../Applications/Textual 5.app/Contents/Headers"; sourceTree = "<group>"; };
+		C82462D21A719E800059F668 /* OTRPrincipleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRPrincipleClass.h; sourceTree = "<group>"; };
+		C82462D31A719E800059F668 /* OTRPrincipleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRPrincipleClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +48,10 @@
 		C82462C61A719C4A0059F668 /* Textual OTR */ = {
 			isa = PBXGroup;
 			children = (
+				C82462CE1A719DCC0059F668 /* Headers */,
 				C82462C71A719C4A0059F668 /* Supporting Files */,
+				C82462D21A719E800059F668 /* OTRPrincipleClass.h */,
+				C82462D31A719E800059F668 /* OTRPrincipleClass.m */,
 			);
 			path = "Textual OTR";
 			sourceTree = "<group>";
@@ -120,6 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82462D41A719E800059F668 /* OTRPrincipleClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +214,14 @@
 		C82462CC1A719C4A0059F668 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "/Applications/Textual 5.app/Contents/MacOS/Textual 5";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"/Applications/Textual 5.app/Contents/Frameworks/**\"";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"/Applications/Textual 5.app/Contents/Headers/**\"",
+				);
 				INFOPLIST_FILE = "Textual OTR/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -215,7 +233,14 @@
 		C82462CD1A719C4A0059F668 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "/Applications/Textual 5.app/Contents/MacOS/Textual 5";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"/Applications/Textual 5.app/Contents/Frameworks/**\"";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"/Applications/Textual 5.app/Contents/Headers/**\"",
+				);
 				INFOPLIST_FILE = "Textual OTR/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
