@@ -17,10 +17,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <Foundation/Foundation.h>
+#include <libotr/proto.h>
+#include <libotr/message.h>
+#include <libotr/context.h>
+#include <libotr/privkey.h>
 
-#import "TextualApplication.h"
+OtrlUserState user_state;
 
-@interface OTRPrincipleClass : NSObject <THOPluginProtocol>
+extern NSString *const otrKeyFile;
+extern NSString *const otrFingerprintsFile;
+extern NSString *const otrInstagFile;
+
+extern NSString *const protocolName;
+extern NSString *const accountName;
+
+@interface Core : NSObject 
+
+void init_otr_lib();
+void init_user_state();
+void generate_key();
 
 @end

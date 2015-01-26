@@ -14,6 +14,7 @@
 		C864D9981A763F3400794EA7 /* libgcrypt.20.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C864D9921A763F0300794EA7 /* libgcrypt.20.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C864D9991A763F3400794EA7 /* libgpg-error.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C864D9931A763F0300794EA7 /* libgpg-error.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C864D99A1A763F3400794EA7 /* libotr.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C864D9941A763F0300794EA7 /* libotr.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		C865A7091A769DA700060D5E /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = C865A7081A769DA700060D5E /* Core.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		C864D9921A763F0300794EA7 /* libgcrypt.20.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgcrypt.20.dylib; path = lib/libgcrypt.20.dylib; sourceTree = "<group>"; };
 		C864D9931A763F0300794EA7 /* libgpg-error.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgpg-error.0.dylib"; path = "lib/libgpg-error.0.dylib"; sourceTree = "<group>"; };
 		C864D9941A763F0300794EA7 /* libotr.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libotr.5.dylib; path = lib/libotr.5.dylib; sourceTree = "<group>"; };
+		C865A7071A769D8200060D5E /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
+		C865A7081A769DA700060D5E /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Core.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 				C82462C71A719C4A0059F668 /* Supporting Files */,
 				C82462D21A719E800059F668 /* OTRPrincipleClass.h */,
 				C82462D31A719E800059F668 /* OTRPrincipleClass.m */,
+				C865A7071A769D8200060D5E /* Core.h */,
+				C865A7081A769DA700060D5E /* Core.m */,
 			);
 			path = "Textual OTR";
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C82462D41A719E800059F668 /* OTRPrincipleClass.m in Sources */,
+				C865A7091A769DA700060D5E /* Core.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
