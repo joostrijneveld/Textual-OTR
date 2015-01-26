@@ -30,9 +30,6 @@ NSString *const otrInstagFile = @"/otr.instag";
 NSString *const protocolName = @"IRC";
 NSString *const accountName = @"testaccount";
 
-const char* filenameToPath(NSString *fname) {
-    return [[NSHomeDirectory() stringByAppendingString:fname] UTF8String];
-}
 
 void init_otr_lib() {
     OTRL_INIT;
@@ -40,9 +37,9 @@ void init_otr_lib() {
 
 void init_user_state() {
     user_state = otrl_userstate_create();
-    otrl_instag_read(user_state, filenameToPath(otrInstagFile));
-    otrl_privkey_read_fingerprints(user_state, filenameToPath(otrFingerprintsFile), NULL, NULL);
-    otrl_privkey_read(user_state, filenameToPath(otrKeyFile));
+    otrl_instag_read(user_state, [Utils filenameToPath:otrInstagFile]);
+    otrl_privkey_read_fingerprints(user_state, [Utils filenameToPath:otrFingerprintsFile], NULL, NULL);
+    otrl_privkey_read(user_state, [Utils filenameToPath:otrKeyFile]);
 }
 
 void generate_key() {
@@ -50,7 +47,7 @@ void generate_key() {
     
     otrl_privkey_generate_start(user_state, [accountName UTF8String], [protocolName UTF8String], &nkp);
     otrl_privkey_generate_calculate(nkp);
-    otrl_privkey_generate_finish(user_state, nkp, filenameToPath(otrKeyFile));
+    otrl_privkey_generate_finish(user_state, nkp, [Utils filenameToPath:otrKeyFile]);
 }
 
 void destruct_user_state() {
