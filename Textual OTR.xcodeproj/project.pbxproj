@@ -8,7 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		C82462D41A719E800059F668 /* OTRPrincipleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C82462D31A719E800059F668 /* OTRPrincipleClass.m */; };
+		C864D9951A763F0300794EA7 /* libgcrypt.20.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C864D9921A763F0300794EA7 /* libgcrypt.20.dylib */; };
+		C864D9961A763F0300794EA7 /* libgpg-error.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C864D9931A763F0300794EA7 /* libgpg-error.0.dylib */; };
+		C864D9971A763F0300794EA7 /* libotr.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C864D9941A763F0300794EA7 /* libotr.5.dylib */; };
+		C864D9981A763F3400794EA7 /* libgcrypt.20.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C864D9921A763F0300794EA7 /* libgcrypt.20.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		C864D9991A763F3400794EA7 /* libgpg-error.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C864D9931A763F0300794EA7 /* libgpg-error.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		C864D99A1A763F3400794EA7 /* libotr.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C864D9941A763F0300794EA7 /* libotr.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C8C12E921A7502990071F56D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ../Frameworks;
+			dstSubfolderSpec = 6;
+			files = (
+				C864D9981A763F3400794EA7 /* libgcrypt.20.dylib in CopyFiles */,
+				C864D9991A763F3400794EA7 /* libgpg-error.0.dylib in CopyFiles */,
+				C864D99A1A763F3400794EA7 /* libotr.5.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C82462C41A719C4A0059F668 /* Textual OTR.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Textual OTR.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -16,6 +37,9 @@
 		C82462CE1A719DCC0059F668 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = "../../../../../Applications/Textual 5.app/Contents/Headers"; sourceTree = "<group>"; };
 		C82462D21A719E800059F668 /* OTRPrincipleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRPrincipleClass.h; sourceTree = "<group>"; };
 		C82462D31A719E800059F668 /* OTRPrincipleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRPrincipleClass.m; sourceTree = "<group>"; };
+		C864D9921A763F0300794EA7 /* libgcrypt.20.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgcrypt.20.dylib; path = lib/libgcrypt.20.dylib; sourceTree = "<group>"; };
+		C864D9931A763F0300794EA7 /* libgpg-error.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgpg-error.0.dylib"; path = "lib/libgpg-error.0.dylib"; sourceTree = "<group>"; };
+		C864D9941A763F0300794EA7 /* libotr.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libotr.5.dylib; path = lib/libotr.5.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +47,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C864D9961A763F0300794EA7 /* libgpg-error.0.dylib in Frameworks */,
+				C864D9951A763F0300794EA7 /* libgcrypt.20.dylib in Frameworks */,
+				C864D9971A763F0300794EA7 /* libotr.5.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +59,7 @@
 		C82462BB1A719C490059F668 = {
 			isa = PBXGroup;
 			children = (
+				C8C12E891A74FF4B0071F56D /* Frameworks */,
 				C82462C61A719C4A0059F668 /* Textual OTR */,
 				C82462C51A719C4A0059F668 /* Products */,
 			);
@@ -64,6 +92,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C8C12E891A74FF4B0071F56D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C864D9921A763F0300794EA7 /* libgcrypt.20.dylib */,
+				C864D9931A763F0300794EA7 /* libgpg-error.0.dylib */,
+				C864D9941A763F0300794EA7 /* libotr.5.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +112,7 @@
 				C82462C01A719C490059F668 /* Sources */,
 				C82462C11A719C490059F668 /* Frameworks */,
 				C82462C21A719C490059F668 /* Resources */,
+				C8C12E921A7502990071F56D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -221,9 +260,15 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"\"/Applications/Textual 5.app/Contents/Headers/**\"",
+					"$(PROJECT_DIR)/include",
 				);
 				INFOPLIST_FILE = "Textual OTR/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -240,9 +285,15 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"\"/Applications/Textual 5.app/Contents/Headers/**\"",
+					"$(PROJECT_DIR)/include",
 				);
 				INFOPLIST_FILE = "Textual OTR/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -268,6 +319,7 @@
 				C82462CD1A719C4A0059F668 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
