@@ -22,6 +22,7 @@
 #include <libotr/context.h>
 #include <libotr/privkey.h>
 
+#import "TextualApplication.h"
 #include "Utils.h"
 
 typedef enum {
@@ -44,5 +45,6 @@ void init_otr_lib();
 void init_user_state();
 void generate_key(NSString *accName);
 otr_error test_key();
+otr_error start_otr(IRCClient* client, IRCChannel* channel);
 
 @end

@@ -59,6 +59,8 @@
                 onClient:(IRCClient *)client
                onChannel:(IRCChannel *)channel
 {
+    otr_error ret;
+    
     NSArray *args = [msgString componentsSeparatedByString:@" "];
     if ([args count] == 0) {
         [client printDebugInformation:@"Please supply a command!" channel:channel];
@@ -73,6 +75,15 @@
         [client printDebugInformation:@"Generating keypair.." channel:channel];
         generate_key(args[1]);
         [client printDebugInformation:@"Done!" channel:channel];
+    }
+    else if ([command isEqualToString:@"start"]) {
+        ret = start_otr(client, channel);
+        if (ret == E_NO_PRIVKEY) {
+            [client printDebugInformation:@"Could not start session; no private key found." channel:channel];
+        }
+        else if (ret == E_SUCCESS) {
+            [client printDebugInformation:@"Setting up OTR session.." channel:channel];
+        }
     }
     else {
         [client printDebugInformation:@"That command is not supported!" channel:channel];

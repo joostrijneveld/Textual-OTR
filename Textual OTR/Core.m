@@ -66,6 +66,22 @@ void generate_key(NSString *accName) {
     otrl_privkey_generate_finish(user_state, nkp, [Utils filenameToPath:otrKeyFile]);
 }
 
+otr_error start_otr(IRCClient* client, IRCChannel* channel) {
+    otr_error ret;
+    
+    ret = test_key();
+    if (ret) {
+        return ret;
+    }
+//    ctx = otr_find_context(irssi, target, 0);
+//    if (ctx && ctx->msgstate == OTRL_MSGSTATE_ENCRYPTED) {
+//        return E_ALREADY_STARTED;
+//    }
+    
+    [client sendLine:[NSString stringWithFormat:@"PRIVMSG %@ ?OTRv23", channel.name]];
+    return E_SUCCESS;
+}
+
 void destruct_user_state() {
     
 }
