@@ -22,6 +22,13 @@
 #include <libotr/context.h>
 #include <libotr/privkey.h>
 
+#include "Utils.h"
+
+typedef enum {
+    E_SUCCESS = 0,
+    E_NO_PRIVKEY = 1
+} otr_error;
+
 OtrlUserState user_state;
 
 extern NSString *const otrKeyFile;
@@ -29,12 +36,13 @@ extern NSString *const otrFingerprintsFile;
 extern NSString *const otrInstagFile;
 
 extern NSString *const protocolName;
-extern NSString *const accountName;
+extern NSString *accountName;
 
 @interface Core : NSObject 
 
 void init_otr_lib();
 void init_user_state();
-void generate_key();
+void generate_key(NSString *accName);
+otr_error test_key();
 
 @end

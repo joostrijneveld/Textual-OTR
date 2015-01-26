@@ -15,6 +15,7 @@
 		C864D9991A763F3400794EA7 /* libgpg-error.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C864D9931A763F0300794EA7 /* libgpg-error.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C864D99A1A763F3400794EA7 /* libotr.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C864D9941A763F0300794EA7 /* libotr.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C865A7091A769DA700060D5E /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = C865A7081A769DA700060D5E /* Core.m */; };
+		C865A70B1A76A9D500060D5E /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C865A70A1A76A9D500060D5E /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,8 @@
 		C864D9941A763F0300794EA7 /* libotr.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libotr.5.dylib; path = lib/libotr.5.dylib; sourceTree = "<group>"; };
 		C865A7071A769D8200060D5E /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		C865A7081A769DA700060D5E /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Core.m; sourceTree = "<group>"; };
+		C865A70A1A76A9D500060D5E /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		C865A70C1A76A9DF00060D5E /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				C82462D31A719E800059F668 /* OTRPrincipleClass.m */,
 				C865A7071A769D8200060D5E /* Core.h */,
 				C865A7081A769DA700060D5E /* Core.m */,
+				C865A70A1A76A9D500060D5E /* Utils.m */,
+				C865A70C1A76A9DF00060D5E /* Utils.h */,
 			);
 			path = "Textual OTR";
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C865A70B1A76A9D500060D5E /* Utils.m in Sources */,
 				C82462D41A719E800059F668 /* OTRPrincipleClass.m in Sources */,
 				C865A7091A769DA700060D5E /* Core.m in Sources */,
 			);

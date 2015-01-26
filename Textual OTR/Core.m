@@ -28,22 +28,38 @@ NSString *const otrFingerprintsFile = @"/otr.fp";
 NSString *const otrInstagFile = @"/otr.instag";
 
 NSString *const protocolName = @"IRC";
-NSString *const accountName = @"testaccount";
+NSString *accountName = nil;
 
+bool keyed = false;
 
 void init_otr_lib() {
     OTRL_INIT;
 }
 
 void init_user_state() {
+    int err;
+    
     user_state = otrl_userstate_create();
     otrl_instag_read(user_state, [Utils filenameToPath:otrInstagFile]);
     otrl_privkey_read_fingerprints(user_state, [Utils filenameToPath:otrFingerprintsFile], NULL, NULL);
-    otrl_privkey_read(user_state, [Utils filenameToPath:otrKeyFile]);
+
+    err = otrl_privkey_read(user_state, [Utils filenameToPath:otrKeyFile]);
+    if (err == GPG_ERR_NO_ERROR) {
+        keyed = true;
+    }
 }
 
-void generate_key() {
+otr_error test_key() {
+    if (!keyed) {
+        return E_NO_PRIVKEY;
+    }
+    return E_SUCCESS;
+}
+
+void generate_key(NSString *accName) {
     void *nkp;
+    
+    accountName = accName;
     
     otrl_privkey_generate_start(user_state, [accountName UTF8String], [protocolName UTF8String], &nkp);
     otrl_privkey_generate_calculate(nkp);

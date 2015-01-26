@@ -27,7 +27,8 @@
     return @[@"otr"];
 }
 
-- (void)pluginLoadedIntoMemory {
+- (void)pluginLoadedIntoMemory
+{
     // TODO consider calling this on first use rather than on load
     init_otr_lib();
     init_user_state();
@@ -58,23 +59,24 @@
                 onClient:(IRCClient *)client
                onChannel:(IRCChannel *)channel
 {
-    [client printDebugInformation:@"Processing command.." channel:channel];
-    NSString *command = [[msgString componentsSeparatedByString:@" "] objectAtIndex:0];
+    NSArray *args = [msgString componentsSeparatedByString:@" "];
+    if ([args count] == 0) {
+        [client printDebugInformation:@"Please supply a command!" channel:channel];
+        return;
+    }
+    NSString *command = args[0];
     if ([command isEqualToString:@"keygen"]) {
+        if ([args count] == 1) {
+            [client printDebugInformation:@"Please specify an account name." channel:channel];
+            return;
+        }
         [client printDebugInformation:@"Generating keypair.." channel:channel];
-        generate_key();
+        generate_key(args[1]);
         [client printDebugInformation:@"Done!" channel:channel];
     }
     else {
         [client printDebugInformation:@"That command is not supported!" channel:channel];
     }
-    // char* buf = malloc( sizeof(char) * 100);
-    // sprintf(buf, "Tost");
-    // buf = otrl_base64_otr_encode(buf, 4);
-    // [client printDebugInformation:
-    //     [NSString stringWithCString:buf encoding:NSASCIIStringEncoding]
-    // channel:c];
-    init_user_state();
 }
 
 @end
