@@ -78,7 +78,7 @@ otr_error start_otr(IRCClient* client, IRCChannel* channel) {
 //        return E_ALREADY_STARTED;
 //    }
     
-    [client sendLine:[NSString stringWithFormat:@"PRIVMSG %@ ?OTRv23", channel.name]];
+    [client sendLine:[NSString stringWithFormat:@"PRIVMSG %@ ?OTRv23?", channel.name]];
     return E_SUCCESS;
 }
 
