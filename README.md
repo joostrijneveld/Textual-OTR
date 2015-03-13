@@ -1,0 +1,1 @@
+This project is temporarily on hold while the Textual team is developing OTR as a core feature, as announced [on Twitter](https://twitter.com/textual/status/576157586556350464). If OTR support is intergrated into the Textual client without the need for an additional plugin, this project will not be developed further.
