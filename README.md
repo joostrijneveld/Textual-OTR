@@ -1,1 +1,1 @@
-This project is temporarily on hold while the Textual team is developing OTR as a core feature, as announced [on Twitter](https://twitter.com/textual/status/576157586556350464). If OTR support is intergrated into the Textual client without the need for an additional plugin, this project will not be developed further.
+This project is deprecated in favour of the fully-functional OTR support that is currently available natively in the Textual release (version 5.1.3 or higher). Thanks!
